@@ -66,6 +66,8 @@ button {
 
 .header {
   border-bottom: 1px solid #ececec;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container-header {
@@ -92,12 +94,12 @@ button {
   font-weight: 500;
   line-height: 1.33;
   letter-spacing: 0.02em;
+  transition: color var(--transition-duration-and-func);
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: var(--accent);
-  transition: color 250ms var(--animation-timing-function);
 }
 
 .nav-link.current {
@@ -109,7 +111,7 @@ button {
   content: "";
   position: absolute;
   display: block;
-  bottom: 0;
+  bottom: -1px;
 
   width: 100%;
   height: 4px;
@@ -132,11 +134,11 @@ button {
 .address-link {
   font-style: normal;
   color: var(--color-main-text);
+  transition: color var(--transition-duration-and-func);
 }
 .address-link:hover,
 .address-link:focus {
   color: var(--accent);
-  transition: color var(--transition-duration-and-func);
 }
 
 /* Section hero */
@@ -184,12 +186,12 @@ button {
   font-size: 16px;
   line-height: 1.33;
   letter-spacing: 0.04em;
+  transition: background-color var(--transition-duration-and-func);
 }
 
 .btn:hover,
 .btn:focus {
   background-color: var(--accent);
-  transition: background-color var(--transition-duration-and-func);
 }
 
 /* Our advantages section style */
@@ -357,9 +359,9 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
+
   background-color: var(--secondary-bg-color);
+  transition: background-color var(--transition-duration-and-func);
 }
 
 .social-links > li {
@@ -373,7 +375,6 @@ img {
 .social-links .link:hover,
 .social-links .link:focus {
   background-color: var(--accent);
-  transition: background-color var(--transition-duration-and-func);
 }
 
 /* customers */
@@ -404,6 +405,8 @@ img {
   height: 88px;
   border: 1px solid var(--border-customers-color);
   border-radius: 4px;
+  transition: fill var(--transition-duration-and-func),
+    border-color var(--transition-duration-and-func);
 }
 
 .customer-logo {
@@ -414,9 +417,6 @@ img {
 .customers-list .customers-link:focus {
   fill: var(--accent);
   border-color: var(--accent);
-  cursor: pointer;
-  transition: fill var(--transition-duration-and-func),
-    border-color var(--transition-duration-and-func);
 }
 
 /* Footer */
@@ -493,12 +493,12 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--transition-duration-and-func);
 }
 
 .social-icons .social-link:hover,
 .social-icons .social-link:focus {
   background-color: #31d0aa;
-  transition: background-color var(--transition-duration-and-func);
 }
 
 .social-item:not(:last-child) {
@@ -557,6 +557,7 @@ img {
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   border-color: var(--accent);
+  background-color: var(--accent);
 }
 
 .modal-close-btn-icon {
@@ -565,7 +566,7 @@ img {
 
 .modal-close-btn:hover .modal-close-btn-icon,
 .modal-close-btn:focus .modal-close-btn-icon {
-  fill: var(--accent);
+  fill: var(--primary-bg-color);
 }
 
 /* Portfolio.html */
@@ -597,6 +598,10 @@ img {
   letter-spacing: 0.04em;
   text-align: center;
   background-color: var(--color-footer-logo);
+  transition: background-color var(--transition-duration-and-func),
+    color var(--transition-duration-and-func),
+    border-color var(--transition-duration-and-func),
+    box-shadow var(--transition-duration-and-func);
 }
 
 .btn-item:not(:last-child) {
@@ -610,10 +615,6 @@ img {
   border-color: transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: background-color var(--transition-duration-and-func),
-    color var(--transition-duration-and-func),
-    border-color var(--transition-duration-and-func),
-    box-shadow var(--transition-duration-and-func);
 }
 
 .card-set {
@@ -635,6 +636,7 @@ img {
 
 .card-item-link {
   display: block;
+  transition: box-shadow var(--transition-duration-and-func);
 }
 
 .team-list-img-wrapper {
@@ -643,20 +645,29 @@ img {
 }
 
 .overlay {
+  content: "";
   display: inline-block;
   position: absolute;
   left: 0;
   top: 0;
   margin: 0;
-  content: "";
   width: 100%;
   height: 100%;
   overflow: auto;
-  transform: translate(0, 100%);
-  transition: transform var(--transition-duration-and-func);
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
   background-color: var(--secondary-bg-color);
   background-blend-mode: soft-light;
   mix-blend-mode: normal;
+  color: var(--color-footer-logo);
+  transform: translate(0, 100%);
+  transition: transform var(--transition-duration-and-func);
 }
 
 .card-item-link:hover .overlay,
@@ -668,7 +679,6 @@ img {
 .card-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition: box-shadow var(--transition-duration-and-func);
 }
 
 .card-container {
