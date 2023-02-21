@@ -549,7 +549,7 @@ img {
   height: 24px;
   border-radius: 50%;
   padding: 0;
-  transition: border-color var(--transition-duration-and-func);
+  transition: background-color var(--transition-duration-and-func);
   background-color: var(--color-footer-text);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
